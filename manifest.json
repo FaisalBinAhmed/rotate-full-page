@@ -1,0 +1,30 @@
+{
+	"manifest_version": 3,
+	"name": "Rotate Whole Page",
+	"description": "Rotate the page in any orientation",
+	"author": "Faisal Ahmed",
+	"short_name": "Rotate Whole Page",
+	"version": "1.0.0",
+	"permissions": ["contextMenus", "activeTab", "storage"],
+	"content_security_policy": {
+		"extension_pages": "default-src 'self'"
+	},
+	"background": {
+		"service_worker": "context.js"
+	},
+	"icons": {
+		"128": "deepl.png"
+	},
+	"options_ui": {
+		"page": "options.html",
+		"open_in_tab": true
+	},
+	"content_scripts": [
+		{
+			"matches": ["*://*/*"],
+			"js": ["script.js"],
+			"css": ["content.css"],
+			"exclude_matches": ["https://www.deepl.com/*"]
+		}
+	]
+}
