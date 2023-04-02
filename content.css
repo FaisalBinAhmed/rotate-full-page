@@ -7,6 +7,7 @@
 	position: absolute;
 	overflow-x: scroll;
 	overflow-y: scroll;
+	transition: 1s ease-in-out;
 }
 
 /* 180 degrees */
@@ -16,6 +17,7 @@
 	width: 100vw;
 	position: absolute;
 	overflow: scroll;
+	transition: 1s ease-in-out;
 }
 
 /* 270 degrees */
@@ -28,4 +30,5 @@
 	position: absolute;
 	overflow-x: scroll;
 	overflow-y: scroll;
+	transition: 1s ease-in-out;
 }
