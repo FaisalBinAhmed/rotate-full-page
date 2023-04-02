@@ -5,7 +5,7 @@
 	"author": "Faisal Ahmed",
 	"short_name": "Rotate Whole Page",
 	"version": "1.0.0",
-	"permissions": ["contextMenus", "activeTab", "storage"],
+	"permissions": ["contextMenus", "tabs", "activeTab"],
 	"content_security_policy": {
 		"extension_pages": "default-src 'self'"
 	},
@@ -13,7 +13,7 @@
 		"service_worker": "context.js"
 	},
 	"icons": {
-		"128": "deepl.png"
+		"128": "icon.png"
 	},
 	"options_ui": {
 		"page": "options.html",
@@ -22,9 +22,8 @@
 	"content_scripts": [
 		{
 			"matches": ["*://*/*"],
-			"js": ["script.js"],
-			"css": ["content.css"],
-			"exclude_matches": ["https://www.deepl.com/*"]
+			"js": ["contentScript.js"],
+			"run_at": "document_start"
 		}
 	]
 }
