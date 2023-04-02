@@ -1,0 +1,31 @@
+.rotate-ninety {
+	transform: rotate(90deg);
+	transform-origin: bottom left;
+	top: -100vw;
+	height: 100vw;
+	width: 100vh;
+	position: absolute;
+	overflow-x: scroll;
+	overflow-y: scroll;
+}
+
+/* 180 degrees */
+.rotate-one-eighty {
+	transform: rotate(180deg);
+	height: 100vh;
+	width: 100vw;
+	position: absolute;
+	overflow: scroll;
+}
+
+/* 270 degrees */
+.rotate-two-seventy {
+	transform: rotate(270deg);
+	transform-origin: top left;
+	top: 100vh;
+	height: 100vw;
+	width: 100vh;
+	position: absolute;
+	overflow-x: scroll;
+	overflow-y: scroll;
+}

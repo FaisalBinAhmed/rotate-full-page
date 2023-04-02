@@ -8,19 +8,29 @@ const mainContextObject = {
 const rootContext = chrome.contextMenus.create(mainContextObject);
 
 const ninety = {
-	title: "90",
+	title: "Rotate 90° clockwise",
 	id: "ninety",
 	parentId: rootContext,
 	contexts: ["page"],
-	// onclick: rotateNinety,
 };
 
 const oneeighty = {
-	title: "180",
+	title: "Rotate 180° degree",
 	id: "oneeighty",
 	parentId: rootContext,
 	contexts: ["page"],
-	// onclick: rotateNinety,
+};
+const twoseventy = {
+	title: "Rotate 90° anti-clockwise",
+	id: "twoseventy",
+	parentId: rootContext,
+	contexts: ["page"],
+};
+const reset = {
+	title: "Reset",
+	id: "reset",
+	parentId: rootContext,
+	contexts: ["page"],
 };
 
 chrome.contextMenus.onClicked.addListener(showContext);
@@ -35,6 +45,12 @@ function showContext(info, tab) {
 		case "oneeighty":
 			rotatePage(180);
 			break;
+		case "twoseventy":
+			rotatePage(270);
+			break;
+		case "reset":
+			rotatePage(0);
+			break;
 		default:
 			console.log("unknown click");
 			break;
@@ -43,8 +59,6 @@ function showContext(info, tab) {
 
 async function rotatePage(angle) {
 	console.log("rotate: ", angle);
-	// const rootElement = document.documentElement;
-	// rootElement.style.cssText += cssStyle;
 	const [tab] = await chrome.tabs.query({
 		active: true,
 		lastFocusedWindow: true,
@@ -57,8 +71,9 @@ async function rotatePage(angle) {
 		// do something with response here, not outside the function
 		console.log(response);
 	}
-	// 	const response = await chrome.runtime.sendMessage({ greeting: "hello" });
 }
 
 chrome.contextMenus.create(ninety);
 chrome.contextMenus.create(oneeighty);
+chrome.contextMenus.create(twoseventy);
+chrome.contextMenus.create(reset);
