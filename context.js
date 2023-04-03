@@ -1,4 +1,4 @@
-var title = "Rotate the whole page";
+var title = "Rotate Page";
 const mainContextObject = {
 	id: "rotate_page",
 	title: title,
@@ -15,7 +15,7 @@ const ninety = {
 };
 
 const oneeighty = {
-	title: "Rotate 180° degree",
+	title: "Rotate 180°",
 	id: "oneeighty",
 	parentId: rootContext,
 	contexts: ["page"],
@@ -34,10 +34,8 @@ const reset = {
 };
 
 chrome.contextMenus.onClicked.addListener(showContext);
-// chrome.contextMenus.
 
 function showContext(info, tab) {
-	console.log("context", info.menuItemId);
 	switch (info.menuItemId) {
 		case "ninety":
 			rotatePage(90);
@@ -52,24 +50,19 @@ function showContext(info, tab) {
 			rotatePage(0);
 			break;
 		default:
-			console.log("unknown click");
 			break;
 	}
 }
 
 async function rotatePage(angle) {
-	console.log("rotate: ", angle);
 	const [tab] = await chrome.tabs.query({
 		active: true,
 		lastFocusedWindow: true,
 	});
-	console.log("tab", tab);
 	if (tab) {
-		const response = await chrome.tabs.sendMessage(tab.id, {
+		const _response = await chrome.tabs.sendMessage(tab.id, {
 			rotate: angle.toString(),
 		});
-		// do something with response here, not outside the function
-		console.log(response);
 	}
 }
 

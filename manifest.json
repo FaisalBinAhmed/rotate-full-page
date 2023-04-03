@@ -1,11 +1,11 @@
 {
 	"manifest_version": 3,
 	"name": "Rotate Whole Page",
-	"description": "Rotate the page in any orientation",
+	"description": "Rotate a page in any orientation",
 	"author": "Faisal Ahmed",
 	"short_name": "Rotate Whole Page",
-	"version": "1.0.0",
-	"permissions": ["contextMenus", "tabs", "activeTab"],
+	"version": "0.1.0",
+	"permissions": ["contextMenus", "tabs"],
 	"content_security_policy": {
 		"extension_pages": "default-src 'self'"
 	},
@@ -13,11 +13,7 @@
 		"service_worker": "context.js"
 	},
 	"icons": {
-		"128": "icon.png"
-	},
-	"options_ui": {
-		"page": "options.html",
-		"open_in_tab": true
+		"128": "rotate.png"
 	},
 	"content_scripts": [
 		{
