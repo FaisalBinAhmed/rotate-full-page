@@ -1,5 +1,7 @@
 # rotate-full-page
 
+![Icon](/rotate.png "Icon")
+
 This extension is mainly created for out of my own necessity.
 This is just a super basic tool that only does one thing: change the orientation of the full page.
 If you're like me who sometimes browse your laptop while lying in the bed, you might find it useful.
